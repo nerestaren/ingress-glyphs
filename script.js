@@ -1,7 +1,6 @@
 var canvas;
 var ctx;
 var callibrationGrid, background;
-var bgcolor = [255, 0, 0];
 var grid = [
     [253, 256],
     [324, 217],
@@ -25,7 +24,8 @@ var glyphs = {
     danger: [10, 4, 0, 7]
 };
 
-currentGlyph = undefined;
+var bgcolor = [];
+var currentGlyph = undefined;
 
 function glyphName(a) {
     var s = a.split('_');
@@ -46,12 +46,23 @@ $(document).ready(function() {
         $('#glyph').append($('<option>').val(a).text(glyphName(a)));
     });
     
+    var t = $('#colorpicker').val();
+    bgcolor[0] = parseInt(t.substr(1, 2), 16);
+    bgcolor[1] = parseInt(t.substr(3, 2), 16);
+    bgcolor[2] = parseInt(t.substr(5, 2), 16);
+    
+    currentGlyph = $('#glyph').val();
+    
+    background = new Image();
+    background.src = backgroundsrc;
+    
+    callibrationGrid = new Image();
+    callibrationGrid.src = callibrationsrc;
+    
     drawBackground(ctx);
 });
 
 function drawBackground(ctx) {
-    background = new Image();
-    background.src = backgroundsrc;
     
     var c = document.createElement('canvas');
     c.width = "512";
@@ -67,10 +78,9 @@ function drawBackground(ctx) {
         pixels[i + 1] = hardLight(pixels[i + 1], bgcolor[1]);
         pixels[i + 2] = hardLight(pixels[i + 2], bgcolor[2]);
     }
-    ctx.putImageData(imgdata, 0, 0);
     
-    callibrationGrid = new Image();
-    callibrationGrid.src = callibrationsrc;
+    
+    ctx.putImageData(imgdata, 0, 0);
     ctx.drawImage(callibrationGrid, 0, 0);
     
     if (currentGlyph !== undefined) {
@@ -121,6 +131,10 @@ function drawPoint(x, y) {
     ctx.stroke();
     ctx.fill();
     
+}
+
+function refresh() {
+    drawBackground(ctx);
 }
     
 function changeBgColor() {

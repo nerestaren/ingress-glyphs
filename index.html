@@ -32,10 +32,10 @@
             <form class="form-glyphs form-inline">
                 <canvas id="canvas" width="512" height="512"></canvas>
                 <label for="colorpicker">Background color:</label>
-                <input type="color" id="colorpicker" class="form-control" onchange="changeBgColor()" value="#FF0000" pattern="#[a-f0-9]{6}" placeholder="#000000">
+                <input type="color" id="colorpicker" class="form-control" onchange="changeBgColor()" value="#00FF00" pattern="#[a-f0-9]{6}" placeholder="#000000">
                 <label for="glyph">Glyph:</label>
-                <select class="selectpicker" id="glyph" class="form-control" onchange="changeGlyph()" data-live-search="true">
-                </select>
+                <select class="selectpicker" id="glyph" class="form-control" onchange="changeGlyph()" data-live-search="true"></select>
+                <button type="button" class="btn btn-default" onclick="refresh()"><span class="glyphicon glyphicon-refresh"></span></button>
             </form>
         </div>
         <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
