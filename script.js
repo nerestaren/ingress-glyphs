@@ -15,11 +15,37 @@ var grid = [
     [394, 175],
     [253, 94]
 ];
+
+var glyphs = {
+    enlightened_enlightenment: [4, 1, 0, 4, 10, 9, 8, 7],
+    resistance: [3, 7, 0, 10, 4, 1],
+    past: [5, 4, 3, 6],
+    present: [4, 3, 2, 1],
+    future: [9, 1, 2, 8],
+    danger: [10, 4, 0, 7]
+};
+
+currentGlyph = undefined;
+
+function glyphName(a) {
+    var s = a.split('_');
+    var r = s[0].substr(0, 1).toUpperCase() + s[0].substr(1);;
+    for (var i = 1; i < s.length; i++) {
+        r += ' - ' + s[i].substr(0, 1).toUpperCase() + s[i].substr(1);
+    }
+    return r;
+}
+
 var path = [4, 1, 0, 4, 10, 9, 8, 7];
 
 $(document).ready(function() {
     canvas = $('#canvas')[0];
     ctx = canvas.getContext('2d');
+    
+    $.each(glyphs, function(a) {
+        $('#glyph').append($('<option>').val(a).text(glyphName(a)));
+    });
+    
     drawBackground(ctx);
 });
 
@@ -47,21 +73,23 @@ function drawBackground(ctx) {
     callibrationGrid.src = callibrationsrc;
     ctx.drawImage(callibrationGrid, 0, 0);
     
-    for (var i = 1; i < path.length; i++) {
-        var a = grid[path[i - 1]];
-        var x1 = a[0]; var y1 = a[1];
-        var b = grid[path[i]];
-        var x2 = b[0]; var y2 = b[1];
-        
-        var dist = Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2));
-        
-        for (var j = 0; j < dist / 4; j++) {
-            var r = Math.random() * 8 - 4;
-            var t = j / (dist / 4);
-            var t1 = 1 - t;
-            var x = t1 * x1 + t * x2 + Math.random() * 8 - 4;
-            var y = t1 * y1 + t * y2 + Math.random() * 8 - 4;
-            drawPoint(x, y);
+    if (currentGlyph !== undefined) {
+        var path = glyphs[currentGlyph];
+        for (var i = 1; i < path.length; i++) {
+            var a = grid[path[i - 1]];
+            var x1 = a[0]; var y1 = a[1];
+            var b = grid[path[i]];
+            var x2 = b[0]; var y2 = b[1];
+
+            var dist = Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2));
+
+            for (var j = 0; j < dist / 2; j++) {
+                var t = j / (dist / 2);
+                var t1 = 1 - t;
+                var x = t1 * x1 + t * x2 + Math.random() * 10 - 5;
+                var y = t1 * y1 + t * y2 + Math.random() * 10 - 5;
+                drawPoint(x, y);
+            }
         }
     }
 }
@@ -74,16 +102,23 @@ function hardLight(b, a) {
 
 function drawPoint(x, y) {
     
-    var g = ctx.createRadialGradient(x, y, 0, x, y, 10);
+    /*var g = ctx.createRadialGradient(x, y, 0, x, y, 10);
     g.addColorStop(0.0, 'rgba(255, 255, 255, 1)');
     g.addColorStop(0.1, 'rgba(255, 255, 255, 1)');
     g.addColorStop(0.5, 'rgba(221, 163, 121, 0.4)');
-    g.addColorStop(1.0, 'rgba(221, 163, 121, 0)');
+    g.addColorStop(1.0, 'rgba(221, 163, 121, 0)');*/
     
     ctx.beginPath();
-    ctx.arc(x, y, 10, 0, Math.PI * 2, true);
+    ctx.arc(x, y, 2.5, 0, Math.PI * 2, true);
     ctx.closePath();
-    ctx.fillStyle = g;
+    //ctx.fillStyle = g;
+    ctx.fillStyle = '#FFFFFF';
+    ctx.shadowColor = 'rgb(221, 163, 121)';
+    ctx.shadowBlur = 8;
+    ctx.shadowOffsetX = 0;
+    ctx.shadowOffsetY = 0;
+    ctx.strokeStyle = 'rgb(255, 209, 176)';
+    ctx.stroke();
     ctx.fill();
     
 }
@@ -94,6 +129,11 @@ function changeBgColor() {
     bgcolor[1] = parseInt(t.substr(3, 2), 16);
     bgcolor[2] = parseInt(t.substr(5, 2), 16);
     
+    drawBackground(ctx);
+}
+
+function changeGlyph() {
+    currentGlyph = $('#glyph').val();
     drawBackground(ctx);
 }
 
