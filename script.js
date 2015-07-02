@@ -124,7 +124,7 @@ function drawPoint(x, y) {
     //ctx.fillStyle = g;
     ctx.fillStyle = '#FFFFFF';
     ctx.shadowColor = 'rgb(221, 163, 121)';
-    ctx.shadowBlur = 8;
+    ctx.shadowBlur = 16;
     ctx.shadowOffsetX = 0;
     ctx.shadowOffsetY = 0;
     ctx.strokeStyle = 'rgb(255, 209, 176)';
