@@ -7,6 +7,7 @@
         <meta name="description" content="Ingress Glyph Mission badge creator">
         <meta name="author" content="Nerestaren">
         <title>Ingress Glyph Mission badge creator</title>
+        <link rel="shortcut icon" href="img/favicon.png">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="bootstrap-select.min.css">
@@ -17,10 +18,11 @@
         <![endif]-->
         <style>
             form.form-glyphs {
-                max-width: 544px;
+                max-width: 800px;
                 padding: 16px;
                 margin: 0 auto;
                 background: lightgray;
+                text-align: center;
             }
             #colorpicker {
                 min-width: 40px;
@@ -30,12 +32,15 @@
     <body>
         <div class="container">
             <form class="form-glyphs form-inline">
+                <h1><a href="https://github.com/nerestaren/ingress-glyphs">Ingress Glyph Mission badge creator</a></h1>
                 <canvas id="canvas" width="512" height="512"></canvas>
+                <br>
                 <label for="colorpicker">Background color:</label>
                 <input type="color" id="colorpicker" class="form-control" onchange="changeBgColor()" value="#00FF00" pattern="#[a-f0-9]{6}" placeholder="#000000">
                 <label for="glyph">Glyph:</label>
                 <select class="selectpicker" id="glyph" class="form-control" onchange="changeGlyph()" data-live-search="true"></select>
                 <button type="button" class="btn btn-default" onclick="refresh()"><span class="glyphicon glyphicon-refresh"></span></button>
+                <a id="download" class="btn btn-default" onclick="doDownload()" download=""><span class="glyphicon glyphicon-download-alt"></span></a>
             </form>
         </div>
         <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
