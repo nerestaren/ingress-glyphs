@@ -25,10 +25,17 @@
                 text-align: center;
             }
             #colorpicker {
-                min-width: 40px;
+                width: 40px;
+                display: inline;
             }
             #map-canvas {
                 height: 512px;
+            }
+            .in-infowindow {
+                max-width: 128px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
             }
         </style>
     </head>
@@ -46,6 +53,10 @@
                 <a id="download" class="btn btn-default" onclick="doDownload()" download=""><span class="glyphicon glyphicon-download-alt"></span></a>
                 <h2>Submitted missions</h2>
                 <div id="map-canvas"></div>
+                <label for="iitc">IITC Draw tools:</label>
+                <input type="text" class="form-control" id="iitc">
+                <h2>Contribute!</h2>
+                <a href="http://github.com/nerestaren/ingress-glyphs">http://github.com/nerestaren/ingress-glyphs</a>
             </form>
         </div>
         <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
