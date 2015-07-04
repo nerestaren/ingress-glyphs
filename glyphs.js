@@ -49,15 +49,54 @@ var glyphs = {
     creativity_mind_thought_idea: [3, 6, 5, 4, 0, 2, 8, 9, 1],
 	// D
 	danger: [10, 4, 0, 7],
+    data_signal_message: [10, 1, 0, 3, 7],
+    defend: [5, 3, 7, 2, 9],
+    destination: [7, 8, 9],
+    destiny: [4, 0, 1, 2, 3, 7],
+    destroy_destruction: [5, 4, 0, 2, 8],
+    deteriorate_erode: [4, 0, 3, 6],
+    die: [6, 3, 0, 2, 8],
+    difficult: [3, 0, 2, 1, 9],
+    discover: [6, 7, 8, 9],
+    distance_outside: [6, 5, 10],
 	// E
+    easy: [1, 0, 3, 7],
+    end_close_finality: [10, 0, 7, 2, 9, 10],
     enlightened_enlightenment: [4, 1, 0, 4, 10, 9, 8, 7],
+    enlightened_enlightenment_typeB: [4, 1, 0, 4, 10, 9, 8, 7, 6],
+    equal: [3, 4, 1, 2],
+    escape: [10, 9, 1, 4, 3],
+    evolution_success_progress: [10, 0, 4, 3],  //move to success?
 	// F
-	future: [9, 1, 2, 8],
+    failure: [10, 0, 1, 2],
+    fear: [4, 1, 2, 9],
+    follow: [10, 1, 9, 8],
+    forget: [6, 3],
+	future_forwardTime: [9, 1, 2, 8],
 	// G
-	gain: [5, 4],
+	gain: [5, 3],
+    government_city_civilization_structure: [5, 4, 3, 2, 1, 9], //move to civilization?
+    grow: [6, 4, 3],
     // H
+    harm: [8, 2, 0, 4, 10, 1, 0],
+    harmony_peace: [10, 1, 0, 3, 7, 2, 0, 4, 10],
+    have: [2, 0, 3, 7],
     help: [5, 4, 0, 3, 2],
+    hide: [4, 1, 9, 2, 3],
+    // I
+    i_me_self: [4, 1, 7, 4],
+    ignore: [2, 8],
+    imperfect: [0, 4, 3, 0, 1, 3],
+    improve: [9, 1, 0, 2],
+    impure: [0, 3, 4, 0, 7],
+    intelligence: [6, 3, 4, 0, 1, 9],
+    interrupt: [10, 0, 4, 5, 6, 3, 0, 7],
+    // J
+    journey: [9, 1, 0, 4, 5, 6, 7],
+    // K
+    knowledge: [4, 0, 1, 7, 4],
 	// L
+    ///////////lead //Todo
 	liberate: [6, 4, 0, 9, 10],
 	// P
     past: [5, 4, 3, 6],
