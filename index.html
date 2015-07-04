@@ -27,6 +27,9 @@
             #colorpicker {
                 min-width: 40px;
             }
+            #map-canvas {
+                height: 512px;
+            }
         </style>
     </head>
     <body>
@@ -41,11 +44,17 @@
                 <select class="selectpicker" id="glyph" class="form-control" onchange="changeGlyph()" data-live-search="true"></select>
                 <button type="button" class="btn btn-default" onclick="refresh()"><span class="glyphicon glyphicon-refresh"></span></button>
                 <a id="download" class="btn btn-default" onclick="doDownload()" download=""><span class="glyphicon glyphicon-download-alt"></span></a>
+                <h2>Submitted missions</h2>
+                <div id="map-canvas"></div>
             </form>
         </div>
         <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         <script src="bootstrap-select.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
+        <script src="images.js"></script>
+        <script src="glyphs.js"></script>
+        <script src="missions.js"></script>
         <script src="script.js"></script>
     </body>
 </html>
