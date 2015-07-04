@@ -108,10 +108,10 @@ $(document).ready(function() {
         var matches = regex.exec(missions[i].portals);
         var linksRaw = matches[1].split('_');
         
-        var path = [];
+        //var path = [];
         var coords = linksRaw[0].split(',');
-        path.push(new google.maps.LatLng(coords[0], coords[1]));
-        path.push(new google.maps.LatLng(coords[2], coords[3]));
+        /*path.push(new google.maps.LatLng(coords[0], coords[1]));
+        path.push(new google.maps.LatLng(coords[2], coords[3]));*/
         
         var marker = new google.maps.Marker({
             position: new google.maps.LatLng(coords[0], coords[1]),
@@ -133,29 +133,40 @@ $(document).ready(function() {
                 }
                 currentInfowindow = infowindow;
                 infowindow.open(map, marker);
-                drawMissionCanvas(glyph, color)
             });
         })(marker, infowindow);
         
         
-        for (var l = 1; l < linksRaw.length; l++) {
-            coords = linksRaw[l].split(',');
-            path.push(new google.maps.LatLng(coords[2], coords[3]));
+        for (var l = 0; l < linksRaw.length; l++) {
+            var coords = linksRaw[l].split(',');
+            var path = [
+                new google.maps.LatLng(coords[0], coords[1]),
+                new google.maps.LatLng(coords[2], coords[3])
+            ];
+        
+            var polyLine = new google.maps.Polyline({
+                path: path,
+                geodesic: true,
+                strokeColor: missions[i].color,
+                strokeOpacity: 1.0,
+                strokeWeight: 2,
+                map: map
+            });
         }
         
-        var polyLine = new google.maps.Polyline({
+        /*var polyLine = new google.maps.Polyline({
             path: path,
             geodesic: true,
             strokeColor: missions[i].color,
             strokeOpacity: 1.0,
             strokeWeight: 2,
             map: map
-        });
+        });*/
     }
     
     google.maps.event.addListener(map, 'click', function() {
         if (currentInfowindow !== undefined) {
-            currentInfowindow.close();
+            currentInfowindow.close();  
         }
     });
     
