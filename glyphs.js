@@ -63,7 +63,7 @@ var glyphs = {
     easy: [1, 0, 3, 7],
     end_close_finality: [10, 0, 7, 2, 9, 10],
     enlightened_enlightenment: [4, 1, 0, 4, 10, 9, 8, 7],
-    enlightened_enlightenment_typeB: [4, 1, 0, 4, 10, 9, 8, 7, 6],
+    enlightened_enlightenmentTypeB: [4, 1, 0, 4, 10, 9, 8, 7, 6],
     equal: [3, 4, 1, 2],
     escape: [10, 9, 1, 4, 3],
     evolution_success_progress: [10, 0, 4, 3],  //move to success?
@@ -96,13 +96,79 @@ var glyphs = {
     // K
     knowledge: [4, 0, 1, 7, 4],
 	// L
-    ///////////lead //Todo
-	liberate: [6, 4, 0, 9, 10],
-	// P
+    lead: [10, 5, 6, 3, 7],
+    legacy: [6, 3, 4, 5, 10, 9, 1, 2, 8],
+    less: [4, 0, 1],
+    liberate: [10, 9, 1, 0, 4, 6],
+    lie: [3, 4, 0, 2, 1, 0],
+    liveAgain_reincarnate: [6, 4, 3, 0, 1, 9],
+    lose_loss: [2, 9],
+    // M
+    message: [6, 4, 0, 2, 9],
+    mind_idea_thought: [4, 0, 7, 3, 4],
+    more: [3, 0, 2],
+    mystery: [5, 4, 1, 10, 4, 3],
+    // N
+    nzeer: [10, 4, 0, 1, 10, 0, 7],
+    nature: [6, 3, 4, 1, 2, 8],
+    new: [1, 2, 8],
+    no_not_absent_inside: [4, 1, 2],
+    nourish: [0, 3, 6, 7, 0],
+    // O
+    old: [5, 4, 3],
+    open_accept: [3, 2, 7, 3],
+    openAll: [7, 3, 2, 7, 6, 5, 10, 9, 8, 7],
+    opening_doorway_portal: [6, 5, 4, 1, 9, 8, 2, 3, 6],//move to portal??
+    // P
     past: [5, 4, 3, 6],
-    present: [4, 3, 2, 1],
+    path: [6, 3, 0, 10],
+    perfection_balance: [10, 0, 2, 8, 7, 6, 3, 0],
+    perspective: [6, 3, 0, 1, 10, 4, 0, 2, 8],
+    potential: [10, 0, 2, 8, 9],
+    presence: [3, 4, 0, 1, 2, 3, 7, 2],
+    present_now: [4, 3, 2, 1],
+    pure_purity: [10, 0, 2, 1, 0],
+    pursue_aspiration: [5, 4, 10, 1],
+    pursue_chase: [10, 0, 4, 3, 6],
+    // Q
+    question: [10, 1, 4, 3],
 	// R
-    resistance: [3, 7, 0, 10, 4, 1],
-	// X
-	xm: [4, 3, 0, 2, 1, 4]
+    react: [1, 4, 0, 2, 8],
+    rebel: [5, 3, 0, 1, 9, 8],
+    recharge: [10, 5, 4, 0, 10],
+    resist_resistance_struggle: [3, 7, 0, 10, 4, 1],
+    resist_resistanceTypeB: [2, 7, 0, 10, 4, 1],
+    restraint: [5, 4, 0, 2, 8, 7],
+    retreat: [10, 1, 8],
+    // S
+    safety: [6, 4, 1, 8],
+    save_rescue: [3, 0, 2, 9],
+    see: [10, 4],
+    seek_search: [0, 1, 4, 3, 2],
+    self: [6, 7, 8],
+    separate: [5, 4, 3, 0, 1, 2, 8],
+    shaper_collective: [6, 3, 4, 10, 1, 2, 8],
+    share: [7, 6, 3, 2, 8],
+    simple: [3, 2],
+    soul_spirit_lifeForce: [0, 1, 2, 7, 0],
+    stability_stay: [6, 3, 2, 8],
+    strong: [4, 1, 2, 3, 4],
+    // T
+    technology: [9, 1, 0, 3, 4, 0, 2, 8],
+    together: [6, 3, 0, 1, 4, 0],
+    truth: [4, 0, 2, 1, 0, 3, 4],
+    // U
+    unbounded: [0, 1, 4, 3, 2, 9, 10, 5, 6, 7, 8],
+    use: [0, 2, 9],
+    // V
+    victory: [10, 1, 7, 4, 10],
+    // W
+    want_desire: [6, 3, 7, 2],
+    we_us: [4, 1, 7],
+    weak: [5, 4, 1, 2],
+    worth: [5, 3, 0, 2, 9],
+    // X
+    xm: [4, 3, 0, 2, 1, 4],
+    // Y
+    you_other: [10, 2, 3, 10]
 };

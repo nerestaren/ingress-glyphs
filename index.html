@@ -51,6 +51,34 @@
                 <select class="selectpicker" id="glyph" class="form-control" onchange="changeGlyph()" data-live-search="true"></select>
                 <button type="button" class="btn btn-default" onclick="refresh()"><span class="glyphicon glyphicon-refresh"></span></button>
                 <a id="download" class="btn btn-default" onclick="doDownload()" download=""><span class="glyphicon glyphicon-download-alt"></span></a>
+                <h2>Create a mission!</h2>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Mission title</h3>
+                    </div>
+                    <div class="panel-body">
+                        Glyph Game - ENLIGHTENED <small>(change it with glyph name)</small>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Mission description</h3>
+                    </div>
+                    <div class="panel-body">
+                        Become inspired by the XM emanations from the portals included in this mission, linking them to draw this glyph. Use the misison badges to form a message.
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Mission portals</h3>
+                    </div>
+                    <div class="panel-body">
+                        <p>When including new portals in the mission, make the user to link each portal to the previous one. Hence, the first one should have a 'Hack' action.</p>
+                        <p>Each portal with a 'Link' action should have a custom description: Link to [previous portal].</p>
+                        <p>If the glyph has less than 6 points, you should enter additional portals in the mission with 'Hack' actions. Please use near portals.</p>
+                        <p>If your mission goes live and you want it included here, please commit a pull request in GitHub of the <code>missions.js</code> file.</p>
+                    </div>
+                </div>
                 <h2>Submitted missions</h2>
                 <div id="map-canvas"></div>
                 <label for="iitc">IITC Draw tools:</label>
